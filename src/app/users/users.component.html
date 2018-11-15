@@ -1,3 +1,33 @@
-<p>
-  users works!
-</p>
+<div class="flex justify-center">
+  <button
+    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded mr-2"
+    (click)="addUser()"
+  >
+    Add 1 user
+  </button>
+
+  <button
+    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded mr-2"
+    (click)="addMultipleUsers(100)"
+  >
+    Add 100 users
+  </button>
+  <button
+    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded mr-2"
+    (click)="addMultipleUsers(1000)"
+  >
+    Add 1000 users
+  </button>
+  <button
+    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded "
+    (click)="addMultipleUsers(10000)"
+  >
+    Add 10000 users
+  </button>
+</div>
+<div class="flex justify-center mt-4">
+  <strong>Number of users:</strong>&nbsp;{{ users?.length }}
+</div>
+<ul class="mt-5">
+  <li *ngFor="let user of (users$ | async)">{{ user.firstName }} {{ user.lastName }}</li>
+</ul>
